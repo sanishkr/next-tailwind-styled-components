@@ -10,5 +10,6 @@
 				"preprocess": false
 			}
 		]
+		// ["tailwind-components"]
 	]
 }

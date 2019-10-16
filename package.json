@@ -12,7 +12,10 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@zeit/next-css": "^1.0.1",
+		"autoprefixer": "^9.6.5",
 		"next": "^9.1.1",
+		"postcss-easy-import": "^3.0.0",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
 		"styled-components": "^4.4.0",
