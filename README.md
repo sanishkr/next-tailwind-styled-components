@@ -17,4 +17,8 @@ It provides best of all worlds.
 - [ ] Directory structure setup
 - [ ] Webpack optimization
 - [ ] Routing
+- [ ] Internationalization
+- [ ] Cookies
+- [ ] Linting Rules (eslint)
+- [ ] Formatting Rules (prettier)
 - [ ] Others
