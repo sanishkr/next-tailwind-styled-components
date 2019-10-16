@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 body {
-	@apply bg-green-900;
+	@apply bg-green-900 text-white;
 }

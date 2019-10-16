@@ -1,6 +1,6 @@
 # NextJS boilerplate with Tailwind CSS and Styled-Components
 
-It provides best of all worlds.
+It provides the best of all worlds.
 
 ## Todo
 
@@ -13,8 +13,8 @@ It provides best of all worlds.
 - [ ] Axios setup
 - [ ] Redux setup
 - [ ] SEO
-- [ ] Critical CSS
-- [ ] Directory structure setup
+- [x] Critical CSS
+- [x] Directory structure setup
 - [ ] Webpack optimization
 - [ ] Routing
 - [ ] Internationalization
