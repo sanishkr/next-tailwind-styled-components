@@ -1,0 +1,27 @@
+{
+	"name": "next-tailwind-styled-components",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"next": "^9.1.1",
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2",
+		"styled-components": "^4.4.0",
+		"tailwindcss": "^1.1.2"
+	},
+	"devDependencies": {
+		"babel-plugin-macros": "^2.6.1",
+		"babel-plugin-styled-components": "^1.10.6",
+		"babel-plugin-tailwind-components": "^0.5.10",
+		"tailwind.macro": "^1.0.0-alpha.10"
+	}
+}
