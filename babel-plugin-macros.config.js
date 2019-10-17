@@ -1,6 +1,6 @@
 module.exports = {
 	tailwind: {
-		config: "./tailwind.js",
+		config: "./tailwind.config.js",
 		styled: "styled-components/macro"
 	},
 	styledComponents: {
