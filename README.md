@@ -18,7 +18,10 @@ It provides the best of all worlds.
 - [ ] Webpack optimization
 - [ ] Routing
 - [ ] Internationalization
+- [ ] RTL <-> LTR
 - [ ] Cookies
 - [ ] Linting Rules (eslint)
 - [ ] Formatting Rules (prettier)
+- [ ] Theming
+- [ ] Environment Setup
 - [ ] Others
