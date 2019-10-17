@@ -1,15 +1,15 @@
 {
 	"name": "next-tailwind-styled-components",
 	"version": "1.0.0",
-	"description": "",
+	"description": "NextJS boilerplate with Tailwind CSS and Styled-Components",
 	"main": "index.js",
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
 		"start": "next start"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": ["nextjs","tailwindcss","styled components","reactjs","pwa","redux","seo","critical css"],
+	"author": "SNS",
 	"license": "ISC",
 	"dependencies": {
 		"@zeit/next-css": "^1.0.1",
