@@ -6,7 +6,7 @@ const withOffline = require('next-offline')
 const nextConfig = {
 	// manifest,
 	target: 'serverless',
-	dontAutoRegisterSw: true,
+	// dontAutoRegisterSw: true,
 	// swDest: 'static/service-worker.js',
 	// devSwSrc: 'public/service-worker.js',
 	// generateInDevMode: true,
