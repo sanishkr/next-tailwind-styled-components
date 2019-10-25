@@ -10,6 +10,7 @@ It provides the best of all worlds.
 - [x] Optional post-css config for plain CSS with Tailwind (Root and Page wise)
 - [ ] PWA setup
 - [ ] Service-Worker setup
+- [ ] Workbox
 - [ ] Axios setup
 - [ ] Redux setup
 - [ ] SEO
@@ -24,4 +25,5 @@ It provides the best of all worlds.
 - [ ] Formatting Rules (prettier)
 - [ ] Theming
 - [ ] Environment Setup
+- [ ] Storybook / style guidist
 - [ ] Others
