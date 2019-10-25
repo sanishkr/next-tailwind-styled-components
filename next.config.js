@@ -1,9 +1,25 @@
 const withCSS = require("@zeit/next-css");
 const withOffline = require('next-offline')
+const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
+const {
+  WebpackBundleSizeAnalyzerPlugin
+} = require('webpack-bundle-size-analyzer')
 // const path = require('path');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const nextConfig = {
+	analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
+  analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
+  bundleAnalyzerConfig: {
+    server: {
+      analyzerMode: 'static',
+      reportFilename: '../bundles/server.html'
+    },
+    browser: {
+      analyzerMode: 'static',
+      reportFilename: '../bundles/client.html'
+    }
+  },
 	// manifest,
 	target: 'serverless',
 	// dontAutoRegisterSw: true,
@@ -46,14 +62,15 @@ const nextConfig = {
 		// 		},
 		// 	],
 		}),
-		// config.plugins.push(
+		config.plugins.push(
+			new WebpackBundleSizeAnalyzerPlugin('stats.txt')
 		// 	new CopyWebpackPlugin([
 		// 		{
 		// 			from: path.resolve('public/manifest.json'),
 		// 			to: path.resolve('.next/static'),
 		// 		},
 		// 	]),
-		// )
+		)
 		config.node = {
 			fs: "empty"
 		};
@@ -62,7 +79,7 @@ const nextConfig = {
 }
 
 const pipe = (...ops) => ops.reduce((a, b) => (arg) => b(a(arg)));
-const wrapper = pipe(withOffline, withCSS);
+const wrapper = pipe(withOffline, withCSS, withBundleAnalyzer);
 
 // module.exports = withPlugins([
 // 	[withOffline({ dontAutoRegisterSw: true })], //doesnt work so, use pip fn instead

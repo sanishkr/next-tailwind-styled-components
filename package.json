@@ -6,7 +6,11 @@
 	"scripts": {
 		"dev": "node server.js",
 		"build": "next build",
-		"start": "npm run build && NODE_ENV=production node server.js"
+		"start": "npm run build && NODE_ENV=production node server.js",
+		"analyze": "BUNDLE_ANALYZE=both next build",
+		"analyze:server": "BUNDLE_ANALYZE=server next build",
+		"analyze:browser": "BUNDLE_ANALYZE=browser next build",
+		"analyze:size": "next build && cat .next/stats.txt"
 	},
 	"keywords": [
 		"nextjs",
@@ -33,9 +37,11 @@
 		"tailwindcss": "^1.1.2"
 	},
 	"devDependencies": {
+		"@zeit/next-bundle-analyzer": "^0.1.2",
 		"babel-plugin-macros": "^2.6.1",
 		"babel-plugin-styled-components": "^1.10.6",
 		"babel-plugin-tailwind-components": "^0.5.10",
-		"tailwind.macro": "^1.0.0-alpha.10"
+		"tailwind.macro": "^1.0.0-alpha.10",
+		"webpack-bundle-size-analyzer": "^3.1.0"
 	}
 }
