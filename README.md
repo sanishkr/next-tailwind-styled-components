@@ -8,9 +8,9 @@ It provides the best of all worlds.
 - [x] Tailwind config
 - [x] Styled-components config
 - [x] Optional post-css config for plain CSS with Tailwind (Root and Page wise)
-- [ ] PWA setup
-- [ ] Service-Worker setup
-- [ ] Workbox
+- [x] PWA setup
+- [x] Service-Worker setup
+- [x] Workbox
 - [ ] Axios setup
 - [ ] Redux setup
 - [ ] SEO
