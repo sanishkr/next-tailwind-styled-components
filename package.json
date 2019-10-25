@@ -4,17 +4,28 @@
 	"description": "NextJS boilerplate with Tailwind CSS and Styled-Components",
 	"main": "index.js",
 	"scripts": {
-		"dev": "next",
+		"dev": "node server.js",
 		"build": "next build",
-		"start": "next start"
+		"start": "npm run build && NODE_ENV=production node server.js"
 	},
-	"keywords": ["nextjs","tailwindcss","styled components","reactjs","pwa","redux","seo","critical css"],
+	"keywords": [
+		"nextjs",
+		"tailwindcss",
+		"styled components",
+		"reactjs",
+		"pwa",
+		"redux",
+		"seo",
+		"critical css",
+		"workbox"
+	],
 	"author": "SNS",
 	"license": "ISC",
 	"dependencies": {
 		"@zeit/next-css": "^1.0.1",
 		"autoprefixer": "^9.6.5",
 		"next": "^9.1.1",
+		"next-offline": "^4.0.6",
 		"postcss-easy-import": "^3.0.0",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
