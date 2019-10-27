@@ -5,7 +5,7 @@ import "../assets/css/pages/page2.css";
 const articlesData = [
 	{
 		id: 1,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -14,7 +14,7 @@ const articlesData = [
 	},
 	{
 		id: 2,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -23,7 +23,7 @@ const articlesData = [
 	},
 	{
 		id: 3,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -32,7 +32,7 @@ const articlesData = [
 	},
 	{
 		id: 4,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -41,7 +41,7 @@ const articlesData = [
 	},
 	{
 		id: 5,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -50,7 +50,7 @@ const articlesData = [
 	},
 	{
 		id: 6,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -59,7 +59,7 @@ const articlesData = [
 	},
 	{
 		id: 7,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -68,7 +68,7 @@ const articlesData = [
 	},
 	{
 		id: 8,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:
@@ -77,7 +77,7 @@ const articlesData = [
 	},
 	{
 		id: 9,
-		imgUrl: "https://tailwindcss.com/img/card-top.jpg",
+		imgUrl: "images/card-top.jpg",
 		imgAlt: "Sunset in the mountains",
 		title: "The Coldest Sunset",
 		description:

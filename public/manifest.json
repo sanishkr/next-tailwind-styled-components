@@ -6,13 +6,13 @@
   "lang": "en",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "images/logo.png",
+      "sizes": "512x512 384x384 192x192 144x144 152x152 120x120 64x64 32x32 24x24 16x16",
+      "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "/page2",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "theme_color": "#317EFB",
+  "background_color": "#317EFB"
 }

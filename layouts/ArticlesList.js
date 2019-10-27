@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tw from "tailwind.macro";
 
 const Header = styled.h1`
-	${tw`text-6xl text-center text-gray-800 text-green-500 font-mono`}
+	${tw`text-6xl text-center text-gray-800 text-black font-mono`}
 `;
 
 export default ({ articleList }) => {
