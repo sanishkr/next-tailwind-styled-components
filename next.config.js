@@ -4,8 +4,20 @@ const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const {
   WebpackBundleSizeAnalyzerPlugin
 } = require('webpack-bundle-size-analyzer')
-// const path = require('path');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+// let networkFirst = workbox.strategies.networkFirst({
+//   cacheName: 'cache-pages' 
+// });
+
+// const customHandler = async (args) => {
+//   try {
+//     const response = await networkFirst.handle(args);
+//     return response || await caches.match(offlinePage);
+//   } catch (error) {
+//     return await caches.match(offlinePage);
+//   }
+// };
 
 const nextConfig = {
 	analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
@@ -23,15 +35,41 @@ const nextConfig = {
 	// manifest,
 	target: 'serverless',
 	// dontAutoRegisterSw: true,
-	// swDest: 'static/service-worker.js',
 	// devSwSrc: 'public/service-worker.js',
 	// generateInDevMode: true,
 	workboxOpts: {
+		// swDest: 'static/service-worker.js',
 		runtimeCaching: [
+			// {
+			// 	urlPattern: /\//,
+			// 	handler: 'NetworkFirst'
+			// },
+			{
+        urlPattern: /^http?.*/,
+        handler: "NetworkFirst",
+        options: {
+          cacheName: "http-calls",
+          networkTimeoutSeconds: 15,
+          expiration: {
+            maxEntries: 150,
+            maxAgeSeconds: 30 * 24 * 60 * 60 // 1 month
+          },
+          cacheableResponse: {
+            statuses: [0, 200]
+          }
+        }
+      },
       {
-        urlPattern: 'https://tailwindcss.com/img/card-top.jpg',
-        handler: 'CacheFirst'
-      }
+        urlPattern: /\/images\//,
+				handler: 'CacheFirst',
+				options: {
+					cacheName: "cached-images",
+					expiration: {
+            maxEntries: 100,
+            maxAgeSeconds: 15 * 24 * 60 * 60 // 15 days
+          },
+				}
+			},
     ]
   },
 	webpack: (config, options) => {
@@ -62,14 +100,17 @@ const nextConfig = {
 		// 		},
 		// 	],
 		}),
+		config.optimization = {
+			minimize: true
+		},
 		config.plugins.push(
-			new WebpackBundleSizeAnalyzerPlugin('stats.txt')
-		// 	new CopyWebpackPlugin([
-		// 		{
-		// 			from: path.resolve('public/manifest.json'),
-		// 			to: path.resolve('.next/static'),
-		// 		},
-		// 	]),
+			new WebpackBundleSizeAnalyzerPlugin('stats.txt'),
+			new CopyWebpackPlugin([
+				{
+					from: path.resolve('public'),
+					to: path.resolve('.next/static'),
+				},
+			]),
 		)
 		config.node = {
 			fs: "empty"
