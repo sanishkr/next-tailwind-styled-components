@@ -26,4 +26,5 @@ It provides the best of all worlds.
 - [ ] Theming
 - [ ] Environment Setup
 - [ ] Storybook / style guidist
+- [ ] socket.io / kafka
 - [ ] Others
