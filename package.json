@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "node server.js",
 		"build": "next build",
-		"start": "npm run build && NODE_ENV=production node server.js",
+		"start": "next build && NODE_ENV=production node server.js",
 		"analyze": "BUNDLE_ANALYZE=both next build",
 		"analyze:server": "BUNDLE_ANALYZE=server next build",
 		"analyze:browser": "BUNDLE_ANALYZE=browser next build",

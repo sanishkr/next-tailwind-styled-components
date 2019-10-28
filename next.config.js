@@ -38,14 +38,14 @@ const nextConfig = {
 	// devSwSrc: 'public/service-worker.js',
 	// generateInDevMode: true,
 	workboxOpts: {
-		// swDest: 'static/service-worker.js',
+		swDest: 'static/service-worker.js',
 		runtimeCaching: [
 			// {
 			// 	urlPattern: /\//,
 			// 	handler: 'NetworkFirst'
 			// },
 			{
-        urlPattern: /^http?.*/,
+        urlPattern: /^https?.*/,
         handler: "NetworkFirst",
         options: {
           cacheName: "http-calls",
