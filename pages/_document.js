@@ -28,7 +28,7 @@ export default class MyDocument extends Document {
 	}
 	render() {
     return (
-      <html lang="en">
+      <html dir="rtl" lang="en">
         <Head></Head>
         <body> 
           {this.props.customValue}

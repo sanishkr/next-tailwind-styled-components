@@ -16,7 +16,7 @@ export default ({ data }) => {
 			<Card rounded>
 				<img css={tw`w-full`} src={imgUrl} alt={imgAlt} />
 				<CardBody title={title} description={description}></CardBody>
-				<div css={tw`px-6 py-4`}>
+				<div css={tw`px-6 py-4`} className="ltr:py-2 rtl:py-4">
 					{tags.map((tag, i) => (
 						<Pill key={i} text={`#${tag}`}></Pill>
 					))}
