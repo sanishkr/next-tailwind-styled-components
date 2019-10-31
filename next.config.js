@@ -6,6 +6,9 @@ const {
 } = require('webpack-bundle-size-analyzer')
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const tailwindcss = require("tailwindcss");
 // let networkFirst = workbox.strategies.networkFirst({
 //   cacheName: 'cache-pages' 
 // });
@@ -18,7 +21,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 //     return await caches.match(offlinePage);
 //   }
 // };
-
+// class ServerMiniCssExtractPlugin extends MiniCssExtractPlugin {
+//   getCssChunkObject(mainChunk) {
+//     return {};
+//   }
+// }
 const nextConfig = {
 	analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
@@ -48,7 +55,7 @@ const nextConfig = {
         urlPattern: /^https?.*/,
         handler: "NetworkFirst",
         options: {
-          cacheName: "http-calls",
+          cacheName: "https-calls",
           networkTimeoutSeconds: 15,
           expiration: {
             maxEntries: 150,
@@ -71,19 +78,75 @@ const nextConfig = {
 				}
 			},
     ]
-  },
+	},
+	// cssModules: true,
+  // cssLoaderOptions: {
+  //   importLoaders: 1,
+  //   localIdentName: "[local]___[hash:base64:5]",
+	// },
 	webpack: (config, options) => {
-		config.module.rules.push({
+		config.module.rules.push(
+		// {
+		// 	test: /\.css$/,
+		// 	loader: 'emit-file-loader',
+		// 	options: {
+		// 		name: 'dist/[path][name].[ext]'
+		// 	}
+		// },
+		{
 			test: /\.css$/,
 			use: [
-				{
-					loader: "postcss-loader",
-					options: {
-						ident: "postcss",
-						plugins: [require("tailwindcss"), require("autoprefixer")]
-					}
-				}
-			]
+				// {
+				// 	loader: ServerMiniCssExtractPlugin.loader
+				// },
+				// 'isomorphic-style-loader',
+				// {
+				// 	loader: 'css-loader',
+				// 	options: {
+				// 		modules: true,
+				// 		sourceMap: true,
+				// 		localIdentName: '[name]-[local]-[hash:base64:5]',
+				// 	},
+				// },
+				// {
+        //   loader: 'postcss-loader',
+        //   options: {
+				// 		plugins: [
+				// 			require("postcss-easy-import"),
+				// 			tailwindcss("./tailwind.config.js"),
+				// 			require("@fullhuman/postcss-purgecss")({
+				// 				content: ["./pages/*.js", "./components/*.js", "./atoms/*.js", "./molecules/*.js", "./layouts/*.js"],
+				// 				defaultExtractor: content =>
+				// 					content.match(/[A-Za-z0-9-_:/]+/g) || []
+				// 			}),
+				// 			require('postcss-preset-env'),
+				// 			require("autoprefixer"),
+				// 			require("cssnano"),
+				// 		]
+				// 	}
+        // }
+				// 'extracted-loader',
+				// 'babel-loader',
+				// 'raw-loader',
+				// 'postcss-loader',
+				// 'style-loader',
+				// {
+				// 	loader: 'css-loader',
+				// 	options: {
+				// 		url: true,
+				// 		minimize: false,
+				// 		sourceMap: true,
+				// 		importLoaders: 2
+				// 	}
+				// },
+				// {
+				// 	loader: 'postcss-loader',
+				// 	options: {
+				// 		ident: "postcss",
+				// 		plugins: [require("tailwindcss"), require("autoprefixer")]
+				// 	}
+				// },
+			// ]
 		// },
 		// {
 		// 	test: /\.(jpe?g|png|gif|ico|webp)$/,
@@ -98,13 +161,18 @@ const nextConfig = {
 		// 				name: '[name].[ext]',
 		// 			},
 		// 		},
-		// 	],
+			],
 		}),
-		config.optimization = {
-			minimize: true
-		},
+		/** #TODO Use below only in production - it disables hmr */
+		// config.optimization = {
+		// 	minimize: true
+		// },
 		config.plugins.push(
 			new WebpackBundleSizeAnalyzerPlugin('stats.txt'),
+			// new ExtractTextPlugin({
+      //   filename: path.join(__dirname, './assets/css/pages/page2.css'),
+      //   allChunks: true
+      // }),
 			new CopyWebpackPlugin([
 				{
 					from: path.resolve('public'),
@@ -112,6 +180,13 @@ const nextConfig = {
 				},
 			]),
 		)
+		// config.watchOptions = {
+    //   ignored: [
+    //     /\.git\//,
+    //     /\.next\//,
+    //     /node_modules/
+    //   ]
+    // }
 		config.node = {
 			fs: "empty"
 		};

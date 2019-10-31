@@ -8,6 +8,12 @@
 		// 		"ssr": false
 		// 	}
 		// ],
+		// [
+    //   "wrap-in-js",
+    //   {
+    //     "extensions": ["css$", "scss$"]
+    //   }
+    // ],
 		[
 			"styled-components",
 			{
@@ -15,7 +21,8 @@
 				"displayName": true,
 				"preprocess": false
 			}
-		]
+		],
+		// ["@babel/plugin-proposal-decorators", { "legacy": true }],
 		// ["tailwind-components"]
 	]
 }
