@@ -15,7 +15,7 @@ app.prepare()
       // handle GET request to /service-worker.js
       if (pathname === '/service-worker.js') {
         const filePath = join(__dirname, '.next', pathname)
-
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'); // adding no-caching for service worker
         app.serveStatic(req, res, filePath)
       } else {
         handle(req, res, parsedUrl)
