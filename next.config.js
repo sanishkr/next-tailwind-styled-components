@@ -67,7 +67,7 @@ const nextConfig = {
         }
       },
       {
-        urlPattern: /\/images\//,
+        urlPattern: /\.(png|svg|jpg|jpeg|ico)$/,
 				handler: 'CacheFirst',
 				options: {
 					cacheName: "cached-images",
