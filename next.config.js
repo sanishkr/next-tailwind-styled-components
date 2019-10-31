@@ -52,6 +52,28 @@ const nextConfig = {
 			// 	handler: 'NetworkFirst'
 			// },
 			{
+				urlPattern: /\.css$/,
+				handler: 'CacheFirst',
+				options: {
+					cacheName: "cached-css",
+					expiration: {
+						maxEntries: 20,
+						maxAgeSeconds: 7 * 24 * 60 * 60 // 7 days
+					},
+				}
+			},
+			{
+				urlPattern: /\.(png|svg|jpg|jpeg|ico)$/,
+				handler: 'CacheFirst',
+				options: {
+					cacheName: "cached-images",
+					expiration: {
+						maxEntries: 100,
+						maxAgeSeconds: 15 * 24 * 60 * 60 // 15 days
+					},
+				}
+			},
+			{
         urlPattern: /\//,
         handler: "NetworkFirst",
         options: {
@@ -66,17 +88,6 @@ const nextConfig = {
           }
         }
       },
-      {
-        urlPattern: /\.(png|svg|jpg|jpeg|ico)$/,
-				handler: 'CacheFirst',
-				options: {
-					cacheName: "cached-images",
-					expiration: {
-            maxEntries: 100,
-            maxAgeSeconds: 15 * 24 * 60 * 60 // 15 days
-          },
-				}
-			},
     ]
 	},
 	// cssModules: true,
