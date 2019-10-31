@@ -52,7 +52,7 @@ const nextConfig = {
 			// 	handler: 'NetworkFirst'
 			// },
 			{
-        urlPattern: /^https?.*/,
+        urlPattern: /\//,
         handler: "NetworkFirst",
         options: {
           cacheName: "https-calls",
