@@ -27,4 +27,7 @@ It provides the best of all worlds.
 - [ ] Environment Setup
 - [ ] Storybook / style guidist
 - [ ] socket.io / kafka
+- [ ] Lighthouse Scores
+- [ ] Docker setup
+- [ ] Playing videos / images
 - [ ] Others
