@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
 
 // import favicon from '../public/favicon.ico';
@@ -19,9 +19,7 @@ class NextApp extends App {
           <meta name="Description" content="NextJS, tailwind.css, Styled Components | The best of all the worlds." />
           {/* <link rel="icon" sizes="192x192" href={favicon} /> */}
         </Head>
-        <Container>
-          <Component {...pageProps} />
-        </Container>
+        <Component {...pageProps} />
       </>
     );
   }
