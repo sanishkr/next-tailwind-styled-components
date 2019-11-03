@@ -1,4 +1,5 @@
 import ArticlesList from "../layouts/ArticlesList";
+import Header from "../components/Header";
 
 import "../assets/css/pages/page2.css";
 
@@ -87,5 +88,10 @@ const articlesData = [
 ];
 
 export default () => {
-	return <ArticlesList articleList={articlesData}></ArticlesList>;
+	return (
+		<>
+			<Header></Header>
+			<ArticlesList articleList={articlesData}></ArticlesList>
+		</>
+	);
 };
