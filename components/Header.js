@@ -1,33 +1,52 @@
-export default () => {
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
+import { i18n, Link, withTranslation } from '../i18n';
+import Router, { withRouter } from 'next/router';
+
+const StyledNav = styled.nav`
+	${tw`flex items-center justify-between flex-wrap bg-teal-500 p-6`}
+`;
+
+const Header = ({ t, router }) => {
+	const lng = i18n.language === 'ar' ? 'en' : 'ar';
+	console.log(t('page1'));
+
 	return (
-		<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-			<div class="flex items-center flex-shrink-0 text-white mr-6">
-				<span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
+		<StyledNav>
+			<div className="flex items-center flex-shrink-0 text-white mr-6">
+				<span className="font-semibold text-xl tracking-tight">
+					Tailwind CSS
+				</span>
 			</div>
-			<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-				<div class="text-sm lg:flex-grow">
-					<a
-						href="#responsive-header"
-						class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-					>
-						Page1
-					</a>
-					<a
-						href="#responsive-header"
-						class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-					>
-						Page2
-					</a>
+			<div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div className="text-sm lg:flex-grow">
+					<Link href="/page1">
+						<a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+							{t('page1')}
+						</a>
+					</Link>
+					<Link href="/page2">
+						<a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+							{t('page2')}
+						</a>
+					</Link>
 				</div>
 				<div>
-					<a
+					<button
 						href="#"
-						class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+						className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+						onClick={async () => {
+							// setCookie({}, "language", i18n.language === "en" ? "ar" : "en");
+							await i18n.changeLanguage(i18n.language === 'en' ? 'ar' : 'en');
+							Router.push(`/${i18n.language}${router.pathname}`);
+						}}
 					>
-						EN / AR
-					</a>
+						{lng.toUpperCase()}
+					</button>
 				</div>
 			</div>
-		</nav>
+		</StyledNav>
 	);
 };
+
+export default withRouter(withTranslation('common')(Header));
