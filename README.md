@@ -17,13 +17,13 @@ It provides the best of all worlds.
 - [x] Critical CSS
 - [x] Directory structure setup
 - [ ] Webpack optimization
-- [ ] Routing
-- [ ] Internationalization
-- [ ] RTL <-> LTR
-- [ ] Cookies
+- [x] Routing
+- [x] Internationalization
+- [x] RTL <-> LTR
+- [x] Cookies
 - [ ] Linting Rules (eslint)
 - [ ] Formatting Rules (prettier)
-- [ ] Theming
+- [ ] Theming [WIP]
 - [ ] Environment Setup
 - [ ] Storybook / style guidist
 - [ ] socket.io / kafka
