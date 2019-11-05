@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import { i18n } from '../i18n';
+import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
 
 import '../assets/css/pages/page1.css';
@@ -21,15 +21,17 @@ const Container = styled.div.attrs({ dir })`
 	}
 `;
 
-export default () => {
+const Page1 = ({ t }) => {
+	// const name = { name: 'العالمية' };
+	const name = { name: 'world' };
 	return (
 		<>
 			<Header></Header>
 			<div css={tw`text-center`}>
 				<Container>
-					Hello, World!!
+					{t('hello-world', name)}
 					<p css={tw`text-blue-300`}>
-						I'm using <code>tailwind</code> and <code>styled-components</code>{' '}
+						I'm using <code>tailwind</code> and <code>styled-components</code>
 						together.
 					</p>
 				</Container>
@@ -37,3 +39,5 @@ export default () => {
 		</>
 	);
 };
+
+export default withTranslation('page1')(Page1);
