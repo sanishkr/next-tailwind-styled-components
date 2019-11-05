@@ -9,8 +9,6 @@ const StyledNav = styled.nav`
 
 const Header = ({ t, router }) => {
 	const lng = i18n.language === 'ar' ? 'en' : 'ar';
-	console.log(t('page1'));
-
 	return (
 		<StyledNav>
 			<div className="flex items-center flex-shrink-0 text-white mr-6">
