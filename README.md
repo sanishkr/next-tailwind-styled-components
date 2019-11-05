@@ -17,17 +17,17 @@ It provides the best of all worlds.
 - [x] Critical CSS
 - [x] Directory structure setup
 - [ ] Webpack optimization
-- [x] Routing
-- [x] Internationalization
-- [x] RTL <-> LTR
-- [x] Cookies
+- [x] Routing [WIP]
+- [x] Internationalization [WIP]
+- [x] RTL <-> LTR [WIP]
+- [x] Cookies [WIP]
 - [ ] Linting Rules (eslint)
 - [ ] Formatting Rules (prettier)
 - [ ] Theming [WIP]
 - [ ] Environment Setup
 - [ ] Storybook / style guidist
 - [ ] socket.io / kafka
-- [ ] Lighthouse Scores
+- [x] Lighthouse Scores [Performance ~ 97, others 100]
 - [ ] Docker setup
 - [ ] Playing videos / images
 - [ ] Others
