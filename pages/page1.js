@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import { withTranslation } from '../i18n';
 import Header from '../components/Header';
+import { withTranslation } from '../i18n';
 
 import '../assets/css/pages/page1.css';
 
@@ -24,8 +24,8 @@ const Container = styled.div.attrs(({ dir }) => {
 const Page1 = props => {
 	const dir = props.i18n.language === 'ar' ? 'rtl' : 'ltr';
 	const { t } = props;
-	// const name = { name: 'العالمية' };
-	const name = { name: 'world' };
+	const name = { name: 'العالمية' };
+	// const name = { name: 'world' };
 	return (
 		<>
 			<Header></Header>
@@ -33,7 +33,7 @@ const Page1 = props => {
 				<Container dir={dir}>
 					{t('hello-world', name)}
 					<p css={tw`text-blue-300`}>
-						I'm using <code>tailwind</code> and <code>styled-components</code>
+						I'm using <code>tailwind</code> and <code>styled-components</code>{' '}
 						together.
 					</p>
 				</Container>
