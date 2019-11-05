@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import { i18n, withTranslation } from '../i18n';
+import { withTranslation } from '../i18n';
 import Header from '../components/Header';
 
 import '../assets/css/pages/page1.css';
 
-const dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
-
-const Container = styled.div.attrs({ dir })`
+const Container = styled.div.attrs(({ dir }) => {
+	dir;
+})`
 	${tw`bg-gray-800 min-h-screen flex flex-col items-center justify-center text-xl`};
 	margin: 10px;
 	&[dir='ltr'] {
@@ -21,14 +21,16 @@ const Container = styled.div.attrs({ dir })`
 	}
 `;
 
-const Page1 = ({ t }) => {
+const Page1 = props => {
+	const dir = props.i18n.language === 'ar' ? 'rtl' : 'ltr';
+	const { t } = props;
 	// const name = { name: 'العالمية' };
 	const name = { name: 'world' };
 	return (
 		<>
 			<Header></Header>
 			<div css={tw`text-center`}>
-				<Container>
+				<Container dir={dir}>
 					{t('hello-world', name)}
 					<p css={tw`text-blue-300`}>
 						I'm using <code>tailwind</code> and <code>styled-components</code>
