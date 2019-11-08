@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import getConfig from 'next/config';
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 import Header from '../components/Header';
 import { withTranslation } from '../i18n';
@@ -26,6 +28,8 @@ const Page1 = props => {
 	const { t } = props;
 	const name = { name: 'العالمية' };
 	// const name = { name: 'world' };
+	console.log({ serverRuntimeConfig, publicRuntimeConfig });
+
 	return (
 		<>
 			<Header></Header>
@@ -34,7 +38,7 @@ const Page1 = props => {
 					{t('hello-world', name)}
 					<p css={tw`text-blue-300`}>
 						I'm using <code>tailwind</code> and <code>styled-components</code>{' '}
-						together.
+						together in {process.env.NODE_ENV} Env.
 					</p>
 				</Container>
 			</div>
