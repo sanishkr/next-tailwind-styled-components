@@ -20,7 +20,6 @@ app
 		// Serve as GZIP
 		server.use(compression());
 
-		server.use(nextI18NextMiddleware(nextI18next));
 		server.get('/service-worker.js', (req, res) => {
 			// const filePath = path.resolve('service-worker.js');
 			const parsedUrl = parse(req.url, true);
@@ -37,6 +36,7 @@ app
 			// res.setHeader('Clear-Site-Data', 'cookies, cache'); // adding kill-switch during new deployment, if you want
 			app.serveStatic(req, res, filePath);
 		});
+		server.use(nextI18NextMiddleware(nextI18next));
 		server.get('*', (req, res) => handle(req, res));
 		server.listen(port, err => {
 			if (err) throw err;

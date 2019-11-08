@@ -55,7 +55,7 @@ const nextConfig = {
 	// target: 'serverless',
 	// dontAutoRegisterSw: true,
 	// devSwSrc: 'public/service-worker.js',
-	generateInDevMode: true,
+	// generateInDevMode: true,
 	workboxOpts: {
 		swDest: 'static/service-worker.js',
 		runtimeCaching: [
