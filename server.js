@@ -24,7 +24,7 @@ app
 			// const filePath = path.resolve('service-worker.js');
 			const parsedUrl = parse(req.url, true);
 			const { pathname } = parsedUrl;
-			const filePath = join(__dirname, '.next', pathname);
+			const filePath = join(__dirname, '.next/static/', pathname);
 			res.setHeader(
 				'Cache-Control',
 				'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
