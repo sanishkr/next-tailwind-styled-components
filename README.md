@@ -30,4 +30,5 @@ It provides the best of all worlds.
 - [x] Lighthouse Scores [Performance ~ 97, others 100]
 - [ ] Docker setup
 - [ ] Playing videos / images
+- [ ] Auto-deployment to now.sh - NOW config
 - [ ] Others
