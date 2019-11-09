@@ -24,11 +24,11 @@ It provides the best of all worlds.
 - [ ] Linting Rules (eslint)
 - [ ] Formatting Rules (prettier)
 - [ ] Theming [WIP]
-- [ ] Environment Setup
+- [x] Environment Setup [WIP]
 - [ ] Storybook / style guidist
 - [ ] socket.io / kafka
 - [x] Lighthouse Scores [Performance ~ 97, others 100]
 - [ ] Docker setup
 - [ ] Playing videos / images
-- [ ] Auto-deployment to now.sh - NOW config
+- [x] Auto-deployment to now.sh - NOW config [blocked]
 - [ ] Others
