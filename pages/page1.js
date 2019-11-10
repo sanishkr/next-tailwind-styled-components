@@ -28,7 +28,7 @@ const Page1 = props => {
 	const { t } = props;
 	const name = { name: 'العالمية' };
 	// const name = { name: 'world' };
-	console.log({ serverRuntimeConfig, publicRuntimeConfig });
+	// console.log({ serverRuntimeConfig, publicRuntimeConfig });
 
 	return (
 		<>
