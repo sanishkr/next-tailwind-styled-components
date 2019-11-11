@@ -11,8 +11,15 @@
 		"analyze": "BUNDLE_ANALYZE=both next build",
 		"analyze:server": "BUNDLE_ANALYZE=server next build",
 		"analyze:browser": "BUNDLE_ANALYZE=browser next build",
-		"analyze:size": "next build && cat .next/stats.txt"
+		"analyze:size": "next build && cat .next/stats.txt",
+		"pretty": "prettier --write --tab-width 2 \"*.js\""
 	},
+	"lint-staged": {
+    "*.js": [
+        "npm run pretty",
+        "git add"
+    ]
+},
 	"keywords": [
 		"nextjs",
 		"tailwindcss",
@@ -49,8 +56,11 @@
 		"babel-plugin-tailwind-components": "^0.5.10",
 		"copy-webpack-plugin": "^5.0.4",
 		"cssnano": "^4.1.10",
+		"husky": "^3.0.9",
+		"lint-staged": "^9.4.2",
 		"postcss-loader": "^2.1.6",
 		"postcss-preset-env": "^6.7.0",
+		"prettier": "^1.19.1",
 		"tailwind.macro": "^1.0.0-alpha.10",
 		"tailwindcss-dir": "^4.0.0",
 		"webpack-bundle-size-analyzer": "^3.1.0"
