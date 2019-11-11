@@ -12,10 +12,10 @@
 		"analyze:server": "BUNDLE_ANALYZE=server next build",
 		"analyze:browser": "BUNDLE_ANALYZE=browser next build",
 		"analyze:size": "next build && cat .next/stats.txt",
-		"pretty": "prettier --write --tab-width 2 \"*.js\""
+		"pretty": "prettier --write --tab-width 2 \"*.{js,css,json}\""
 	},
 	"lint-staged": {
-    "*.js": [
+    "*.{js,css,json}": [
         "npm run pretty",
         "git add"
     ]
