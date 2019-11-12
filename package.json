@@ -1,68 +1,69 @@
 {
-	"name": "next-tailwind-styled-components",
-	"version": "1.0.0",
-	"description": "NextJS boilerplate with Tailwind CSS and Styled-Components",
-	"main": "index.js",
-	"scripts": {
-		"dev": "node server.js",
-		"build": "next build",
-		"start": "next build && NODE_ENV=production ENV=production node server.js",
-		"start:stage": "next build && NODE_ENV=production ENV=stage node server.js",
-		"analyze": "BUNDLE_ANALYZE=both next build",
-		"analyze:server": "BUNDLE_ANALYZE=server next build",
-		"analyze:browser": "BUNDLE_ANALYZE=browser next build",
-		"analyze:size": "next build && cat .next/stats.txt",
-		"pretty": "prettier --write --tab-width 2 \"*.{js,css,json}\""
-	},
-	"lint-staged": {
+  "name": "next-tailwind-styled-components",
+  "version": "1.0.0",
+  "description": "NextJS boilerplate with Tailwind CSS and Styled-Components",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next build && NODE_ENV=production ENV=production node server.js",
+    "start:stage": "next build && NODE_ENV=production ENV=stage node server.js",
+    "analyze": "BUNDLE_ANALYZE=both next build",
+    "analyze:server": "BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build",
+    "analyze:size": "next build && cat .next/stats.txt",
+    "pretty": "prettier --single-quote --tab-width 2 --write \"*.{js,css,json}\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
     "*.{js,css,json}": [
-        "npm run pretty",
-        "git add"
+      "npm run pretty",
+      "git add"
     ]
-},
-	"keywords": [
-		"nextjs",
-		"tailwindcss",
-		"styled components",
-		"reactjs",
-		"pwa",
-		"redux",
-		"seo",
-		"critical css",
-		"workbox"
-	],
-	"author": "SNS",
-	"license": "ISC",
-	"dependencies": {
-		"@zeit/next-css": "^1.0.1",
-		"babel-plugin-macros": "^2.6.1",
-		"express": "^4.17.1",
-		"next": "^9.1.1",
-		"next-i18next": "^2.0.0",
-		"next-offline": "^4.0.6",
-		"nookies": "^2.0.8",
-		"postcss-easy-import": "^3.0.0",
-		"react": "^16.10.2",
-		"react-dom": "^16.10.2",
-		"styled-components": "^4.4.0",
-		"tailwindcss": "^1.1.2"
-	},
-	"devDependencies": {
-		"@fullhuman/postcss-purgecss": "^1.3.0",
-		"@zeit/next-bundle-analyzer": "^0.1.2",
-		"autoprefixer": "^9.7.0",
-		"babel-loader": "^8.0.6",
-		"babel-plugin-styled-components": "^1.10.6",
-		"babel-plugin-tailwind-components": "^0.5.10",
-		"copy-webpack-plugin": "^5.0.4",
-		"cssnano": "^4.1.10",
-		"husky": "^3.0.9",
-		"lint-staged": "^9.4.2",
-		"postcss-loader": "^2.1.6",
-		"postcss-preset-env": "^6.7.0",
-		"prettier": "^1.19.1",
-		"tailwind.macro": "^1.0.0-alpha.10",
-		"tailwindcss-dir": "^4.0.0",
-		"webpack-bundle-size-analyzer": "^3.1.0"
-	}
+  },
+  "keywords": [
+    "nextjs",
+    "tailwindcss",
+    "styled components",
+    "reactjs",
+    "pwa",
+    "redux",
+    "seo",
+    "critical css",
+    "workbox"
+  ],
+  "author": "SNS",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "babel-plugin-macros": "^2.6.1",
+    "express": "^4.17.1",
+    "next": "^9.1.1",
+    "next-i18next": "^2.0.0",
+    "next-offline": "^4.0.6",
+    "nookies": "^2.0.8",
+    "postcss-easy-import": "^3.0.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "styled-components": "^4.4.0",
+    "tailwindcss": "^1.1.2"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "autoprefixer": "^9.7.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "babel-plugin-tailwind-components": "^0.5.10",
+    "copy-webpack-plugin": "^5.0.4",
+    "cssnano": "^4.1.10",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "postcss-loader": "^2.1.6",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.19.1",
+    "tailwind.macro": "^1.0.0-alpha.10",
+    "tailwindcss-dir": "^4.0.0",
+    "webpack-bundle-size-analyzer": "^3.1.0"
+  }
 }
