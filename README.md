@@ -21,7 +21,7 @@ It provides the best of all worlds.
 - [x] Internationalization
 - [x] RTL <-> LTR
 - [x] Cookies
-- [ ] Linting Rules (eslint)
+- [x] Linting Rules (eslint) [WIP]
 - [x] Formatting Rules (prettier)
 - [ ] Theming [WIP]
 - [x] Environment Setup [WIP]
