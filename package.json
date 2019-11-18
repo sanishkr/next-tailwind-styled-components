@@ -12,11 +12,11 @@
     "analyze:server": "BUNDLE_ANALYZE=server next build",
     "analyze:browser": "BUNDLE_ANALYZE=browser next build",
     "analyze:size": "next build && cat .next/stats.txt",
-    "pretty": "prettier --single-quote --tab-width 2 --write \"*.{js,css,json}\"",
+    "pretty": "prettier --single-quote --tab-width 2 --write \"**/*.{js,css,json}\"",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,css,json}": [
+    "**/*.{js,css,json}": [
       "npm run pretty",
       "git add"
     ]
