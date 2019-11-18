@@ -1,9 +1,9 @@
-@import "../index.css";
+@import '../index.css';
 
 body {
-	font-family: cursive;
-	font-weight: 400;
+  font-family: cursive;
+  font-weight: 400;
 }
 body {
-	@apply text-yellow-300;
+  @apply text-yellow-300;
 }

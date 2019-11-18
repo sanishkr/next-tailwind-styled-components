@@ -1,6 +1,6 @@
-@import "../index.css";
+@import '../index.css';
 
 body {
-	@apply bg-gray-200;
-	font-family: roboto;
+  @apply bg-gray-200;
+  font-family: roboto;
 }
