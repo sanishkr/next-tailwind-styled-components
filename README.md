@@ -17,18 +17,18 @@ It provides the best of all worlds.
 - [x] Critical CSS
 - [x] Directory structure setup
 - [ ] Webpack optimization
-- [x] Routing [WIP]
-- [x] Internationalization [WIP]
-- [x] RTL <-> LTR [WIP]
-- [x] Cookies [WIP]
+- [x] Routing
+- [x] Internationalization
+- [x] RTL <-> LTR
+- [x] Cookies
 - [ ] Linting Rules (eslint)
-- [ ] Formatting Rules (prettier)
+- [x] Formatting Rules (prettier)
 - [ ] Theming [WIP]
 - [x] Environment Setup [WIP]
 - [ ] Storybook / style guidist
-- [ ] socket.io / kafka
+- [ ] socket.io / kafka [Backlog]
 - [x] Lighthouse Scores [Performance ~ 97, others 100]
 - [ ] Docker setup
 - [ ] Playing videos / images
-- [x] Auto-deployment to now.sh - NOW config [blocked]
+- [x] Auto-deployment to now.sh - NOW config [blocked by i18n]
 - [ ] Others
