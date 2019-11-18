@@ -4,7 +4,8 @@
     "plugin:jsx-a11y/recommended",
     "prettier",
     // "prettier/flowtype", // if you are using flow
-    "prettier/react"
+    "prettier/react",
+    "plugin:prettier/recommended"
   ],
   "plugins": ["jsx-a11y", "prettier"],
   "rules": {
