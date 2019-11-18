@@ -2,13 +2,17 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
+import withRedux from 'next-redux-wrapper';
+import { Provider } from 'react-redux';
+import makeStore from '../store';
+
 import { appWithTranslation } from '../i18n';
 
 // import favicon from '../public/favicon.ico';
 
 class NextApp extends App {
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, store } = this.props;
     return (
       <>
         <Head>
@@ -24,9 +28,11 @@ class NextApp extends App {
           />
           {/* <link rel="icon" sizes="192x192" href={favicon} /> */}
         </Head>
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       </>
     );
   }
 }
-export default appWithTranslation(NextApp);
+export default withRedux(makeStore)(appWithTranslation(NextApp));
