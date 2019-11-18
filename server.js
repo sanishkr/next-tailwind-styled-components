@@ -28,7 +28,7 @@ app
       const filePath = join(__dirname, '.next/static/', pathname);
       res.setHeader(
         'Cache-Control',
-        'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
+        'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
       );
       // adding no-caching for service worker
       // Don't cache service worker is a best practice
@@ -41,7 +41,7 @@ app
       app,
       ({ req, res, route, query }) => {
         app.render(req, res, route.page, query);
-      }
+      },
     );
     server.use(nextI18NextMiddleware(nextI18next)).use(handler);
     server.get('*', (req, res) => handle(req, res));

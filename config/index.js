@@ -1,11 +1,11 @@
 module.exports = {
   development: {
-    api: 'https://api.development.com'
+    api: 'https://jsonplaceholder.typicode.com',
   },
   stage: {
-    api: 'https://api.stage.com'
+    api: 'https://api.stage.com',
   },
   production: {
-    api: 'https://api.production.com'
-  }
+    api: 'https://api.production.com',
+  },
 };

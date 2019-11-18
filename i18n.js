@@ -6,6 +6,6 @@ module.exports = new NextI18Next({
   localePath: typeof window === 'undefined' ? 'public/locales' : 'locales',
   localeSubpaths: {
     en: 'en',
-    ar: 'ar'
-  }
+    ar: 'ar',
+  },
 });

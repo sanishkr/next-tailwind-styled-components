@@ -1,13 +1,13 @@
 module.exports = {
   theme: {
-    extend: {}
+    extend: {},
   },
   // corePlugins: ["margin", "padding", "preflight", "container"],
   variants: {
     float: ['responsive', 'direction'],
     margin: ['responsive', 'direction'],
-    padding: ['responsive', 'direction']
+    padding: ['responsive', 'direction'],
   },
   // plugins: [require("tailwindcss")]
-  plugins: [require('tailwindcss-dir')()]
+  plugins: [require('tailwindcss-dir')()],
 };
