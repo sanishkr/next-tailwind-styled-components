@@ -1,14 +1,25 @@
+import React, { Component } from 'react';
+
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import getConfig from 'next/config';
-const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
+import getConfig from 'next/config';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import {
+  actionCreators as PostsActionsCreators,
+  selectors,
+} from '../store/posts';
 import Header from '../components/Header';
 import { withTranslation } from '../i18n';
 
 import '../assets/css/pages/page1.css';
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 const Container = styled.div.attrs(({ dir }) => {
+  // eslint-disable-next-line no-unused-expressions
   dir;
 })`
   ${tw`bg-gray-800 min-h-screen flex flex-col items-center justify-center text-xl`};
@@ -23,27 +34,51 @@ const Container = styled.div.attrs(({ dir }) => {
   }
 `;
 
-const Page1 = props => {
-  const dir = props.i18n.language === 'ar' ? 'rtl' : 'ltr';
-  const { t } = props;
-  const name = { name: 'العالمية' };
-  // const name = { name: 'world' };
-  // console.log({ serverRuntimeConfig, publicRuntimeConfig });
+class Page1 extends Component {
+  static async getInitialProps({ store, isServer, query, res }) {
+    // await Promise.all([store.dispatch(landingactionCreators.getPage(params))]);
+    return { ...isServer, namespacesRequired: ['common', 'page1'] };
+  }
+  componentDidMount = () => {
+    this.props.getPosts();
+  };
+  render() {
+    const dir = this.props.i18n.language === 'ar' ? 'rtl' : 'ltr';
+    const { t } = this.props;
+    const name = { name: 'العالمية' };
+    // const name = { name: 'world' };
+    // console.log(this.props);
 
-  return (
-    <>
-      <Header></Header>
-      <div css={tw`text-center`}>
-        <Container dir={dir}>
-          {t('hello-world', name)}
-          <p css={tw`text-blue-300`}>
-            I'm using <code>tailwind</code> and <code>styled-components</code>{' '}
-            together in {process.env.NODE_ENV} Env.
-          </p>
-        </Container>
-      </div>
-    </>
+    return (
+      <>
+        <Header></Header>
+        <div css={tw`text-center`}>
+          <Container dir={dir}>
+            {t('hello-world', name)}
+            <p css={tw`text-blue-300`}>
+              I'm using <code>tailwind</code> and <code>styled-components</code>{' '}
+              together in {process.env.NODE_ENV} Env.
+            </p>
+          </Container>
+        </div>
+      </>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getPosts: PostsActionsCreators.getPosts,
+    },
+    dispatch,
   );
-};
 
-export default withTranslation('page1')(Page1);
+const mapStateToProps = store => ({
+  posts: selectors.getPosts(store),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withTranslation('page1')(Page1));
