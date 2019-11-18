@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import ArticlesList from '../layouts/ArticlesList';
 import Header from '../components/Header';
 
@@ -11,7 +12,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 4,
@@ -38,7 +39,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 5,
@@ -47,7 +48,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 6,
@@ -56,7 +57,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 7,
@@ -65,7 +66,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 8,
@@ -74,7 +75,7 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
+    tags: ['photography', 'travel', 'winter'],
   },
   {
     id: 9,
@@ -83,8 +84,8 @@ const articlesData = [
     title: 'The Coldest Sunset',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-    tags: ['photography', 'travel', 'winter']
-  }
+    tags: ['photography', 'travel', 'winter'],
+  },
 ];
 
 export default () => {
