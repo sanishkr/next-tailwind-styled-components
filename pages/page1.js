@@ -36,18 +36,22 @@ const Container = styled.div.attrs(({ dir }) => {
 
 class Page1 extends Component {
   static async getInitialProps({ store, isServer, query, res }) {
-    // await Promise.all([store.dispatch(landingactionCreators.getPage(params))]);
+    const params = { id: 1 };
+    await Promise.all([
+      store.dispatch(PostsActionsCreators.getOnePost(params)),
+    ]);
     return { ...isServer, namespacesRequired: ['common', 'page1'] };
   }
   componentDidMount = () => {
     this.props.getPosts();
+    // this.props.getOnePost({ id: 1 });
   };
   render() {
     const dir = this.props.i18n.language === 'ar' ? 'rtl' : 'ltr';
     const { t } = this.props;
     const name = { name: 'العالمية' };
     // const name = { name: 'world' };
-    // console.log(this.props);
+    console.log(this.props);
 
     return (
       <>
@@ -70,12 +74,14 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       getPosts: PostsActionsCreators.getPosts,
+      // getOnePost: PostsActionsCreators.getOnePost,
     },
     dispatch,
   );
 
 const mapStateToProps = store => ({
   posts: selectors.getPosts(store),
+  post: selectors.getOnePost(store),
 });
 
 export default connect(

@@ -11,4 +11,9 @@ const getPosts = () =>
     data: [],
   }));
 
-export default { getPosts };
+const getOnePost = ({ id }) =>
+  axios.get(`${publicRuntimeConfig.configs.api}/posts/${id}`).catch(() => ({
+    data: {},
+  }));
+
+export default { getPosts, getOnePost };
