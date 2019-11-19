@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
@@ -82,6 +83,17 @@ const nextConfig = {
           expiration: {
             maxEntries: 100,
             maxAgeSeconds: 15 * 24 * 60 * 60, // 15 days
+          },
+        },
+      },
+      {
+        urlPattern: /https:\/\/jsonplaceholder.typicode.com/,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'cached-apis',
+          expiration: {
+            maxEntries: 2,
+            maxAgeSeconds: 1 * 24 * 60 * 60, // 1 day
           },
         },
       },
