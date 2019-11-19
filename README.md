@@ -11,8 +11,8 @@ It provides the best of all worlds.
 - [x] PWA setup
 - [x] Service-Worker setup
 - [x] Workbox
-- [ ] Axios setup
-- [ ] Redux setup
+- [x] Axios setup [WIP]
+- [x] Redux setup [WIP]
 - [ ] SEO
 - [x] Critical CSS
 - [x] Directory structure setup
