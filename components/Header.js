@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import { i18n, Link, withTranslation } from '../i18n';
@@ -19,14 +21,14 @@ const Header = ({ t, router }) => {
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
           <Link href="/page1">
-            <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <button className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
               {t('page1')}
-            </a>
+            </button>
           </Link>
           <Link href="/page2">
-            <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <button className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
               {t('page2')}
-            </a>
+            </button>
           </Link>
         </div>
         <div>

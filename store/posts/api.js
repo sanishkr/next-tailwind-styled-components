@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { parseCookies } from 'nookies';
+// import { parseCookies } from 'nookies';
 const getConfig = require('next/config');
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig.default();
 

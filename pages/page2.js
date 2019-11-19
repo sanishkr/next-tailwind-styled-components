@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import ArticlesList from '../layouts/ArticlesList';
 import Header from '../components/Header';
 

@@ -16,7 +16,7 @@ import Header from '../components/Header';
 import { withTranslation } from '../i18n';
 
 import '../assets/css/pages/page1.css';
-const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+// const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 const Container = styled.div.attrs(({ dir }) => {
   // eslint-disable-next-line no-unused-expressions
