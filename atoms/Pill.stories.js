@@ -3,12 +3,8 @@ import Pill from './Pill';
 
 export default { title: 'Pill' };
 
-export const withText = () => <Pill>Hello Button</Pill>;
+export const withText = () => <Pill text="Hello Pill"></Pill>;
 
-export const withEmoji = () => (
-  <Pill>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
-  </Pill>
-);
+export const withHashtag = () => <Pill text="#Pill"></Pill>;
+
+export const withEmoji = () => <Pill text="😀 😎 👍 💯"></Pill>;
