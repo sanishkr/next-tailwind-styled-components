@@ -25,7 +25,7 @@ It provides the best of all worlds.
 - [x] Formatting Rules (prettier)
 - [ ] Theming [WIP]
 - [x] Environment Setup [WIP]
-- [ ] Storybook / style guidist
+- [x] Storybook [Done] / style guidist [Backlog]
 - [ ] socket.io / kafka [Backlog]
 - [x] Lighthouse Scores [Performance ~ 97, others 100]
 - [ ] Docker setup
