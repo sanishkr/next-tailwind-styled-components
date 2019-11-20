@@ -51,7 +51,7 @@ class Page1 extends Component {
     const { t } = this.props;
     const name = { name: 'العالمية' };
     // const name = { name: 'world' };
-    console.log(this.props);
+    // console.log(this.props);
 
     return (
       <>
