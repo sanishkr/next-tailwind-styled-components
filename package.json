@@ -4,6 +4,9 @@
   "description": "NextJS boilerplate with Tailwind CSS and Styled-Components",
   "main": "index.js",
   "scripts": {
+    "dev:docker:build": "docker-compose build",
+    "dev:docker:up": "npm run dev:docker:build && docker-compose up",
+    "dev:docker:down": "docker-compose down",
     "dev": "node server.js",
     "build": "next build",
     "start": "next build && NODE_ENV=production ENV=production node server.js",
