@@ -223,6 +223,10 @@ const nextConfig = {
     //     /node_modules/
     //   ]
     // }
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
+    };
     config.node = {
       fs: 'empty',
     };

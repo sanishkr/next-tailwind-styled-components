@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  next-tailwind-styled-components:
+    container_name: next-tailwind-styled-components
+    ports:
+      - '3000:3000'
+    build:
+      context: .
+      dockerfile: DockerfileDev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
