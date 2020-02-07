@@ -29,6 +29,6 @@ It provides the best of all worlds.
 - [ ] socket.io / kafka [Backlog]
 - [x] Lighthouse Scores [Performance ~ 97, others 100]
 - [x] Docker setup
-- [ ] Playing videos / images
 - [x] Auto-deployment to now.sh - NOW config [blocked by i18n]
+- [ ] Enable "brotli" compression
 - [ ] Others
