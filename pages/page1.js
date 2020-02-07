@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import getConfig from 'next/config';
+// import getConfig from 'next/config';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
