@@ -61,7 +61,7 @@
     "redux": "^4.0.4",
     "redux-promise-middleware": "^6.1.2",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.4.1",
+    "styled-components": "^5.0.1",
     "tailwindcss": "^1.2.0",
     "type-to-reducer": "^1.2.0"
   },
@@ -94,6 +94,7 @@
     "prettier": "^1.19.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
+    "stylis-plugin-rtl": "^1.0.0",
     "tailwind.macro": "^1.0.0-alpha.10",
     "tailwindcss-dir": "^4.0.0",
     "twin.macro": "^1.0.0-alpha.7",
