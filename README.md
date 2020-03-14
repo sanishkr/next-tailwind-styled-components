@@ -31,4 +31,5 @@ It provides the best of all worlds.
 - [x] Docker setup
 - [x] Auto-deployment to now.sh - NOW config [blocked by i18n]
 - [ ] Enable "brotli" compression
+- [x] upgrade tailwindcss to 1.2(grids and all features) and styled-components(automatic rtl support) - better DX
 - [ ] Others
