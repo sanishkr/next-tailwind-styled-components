@@ -1,18 +1,21 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
+import { StyleSheetManager } from 'styled-components';
+import stylisRTLPlugin from 'stylis-plugin-rtl';
 
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import makeStore from '../store';
 
-import { appWithTranslation } from '../i18n';
+import { appWithTranslation, i18n } from '../i18n';
 
 // import favicon from '../public/favicon.ico';
 
 class NextApp extends App {
   render() {
     const { Component, pageProps, store } = this.props;
+    const { language } = i18n;
     return (
       <>
         <Head>
@@ -29,7 +32,13 @@ class NextApp extends App {
           {/* <link rel="icon" sizes="192x192" href={favicon} /> */}
         </Head>
         <Provider store={store}>
-          <Component {...pageProps} />
+          {language ? (
+            <StyleSheetManager
+              stylisPlugins={language === 'ar' ? [stylisRTLPlugin] : []}
+            >
+              <Component {...pageProps} />
+            </StyleSheetManager>
+          ) : null}
         </Provider>
       </>
     );
