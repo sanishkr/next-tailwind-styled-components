@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import tw from 'twin.macro';
 
 const StyledPill = styled.span`
-  ${tw`mb-2 xl:mb-0 inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2`};
+  ${tw`inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full xl:mb-0`};
 `;
 
 export default ({ text }) => {

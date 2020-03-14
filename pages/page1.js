@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import tw from 'twin.macro';
 
 // import getConfig from 'next/config';
 
@@ -22,7 +22,7 @@ const Container = styled.div.attrs(({ dir }) => {
   // eslint-disable-next-line no-unused-expressions
   dir;
 })`
-  ${tw`bg-gray-800 min-h-screen flex flex-col items-center justify-center text-xl`};
+  ${tw`flex flex-col items-center justify-center min-h-screen text-xl bg-gray-800`};
   margin: 10px;
   &[dir='ltr'] {
     margin-left: 1rem;
